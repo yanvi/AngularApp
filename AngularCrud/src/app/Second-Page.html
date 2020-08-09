@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+    <body>
+        <div>
+            Select Department :
+            <select >
+              <option *ngFor=" let department of departments" value ="{{department.Id}}">{{department.Name}} </option>
+                
+            </select>
+        </div>
+        <div>
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor=" let emp of employees">
+        <td>{{emp.Id}}</td>
+        <td>{{emp.Name}}</td>
+        <td>{{emp.Age}}</td>
+        
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<div>Add Two Number Program.</div>
+
+<table>
+    <tr>
+        <td> Enter First Number: </td>
+        <td> <input type="text" name ="txtFirstNo" /> </td>
+    </tr>
+
+    <tr>
+        <td> Enter Second Number: </td>
+        <td> <input type="text" name="txtSecondNo" /> </td> 
+    </tr>
+    <tr>
+        <td colspan="1"> <input type="button" value="Add" (click)="Add(10,20)"/> </td>
+    </tr>
+</table>
+</body>
+</html>

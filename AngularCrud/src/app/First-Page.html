@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>first angular  example </title>
+    </head>
+    <body>
+        <input #myInput type ="text"/>
+        <input (click)="logMessage(myInput.value)" type ="button"  value="Click me"/>
+        <br/>
+        <input [(ngModel)]="name" type="text"/>
+
+        {{name}}
+
+        <br/>
+    <p> If else example start here ...</p>
+  <div *ngIf="isDisplay ; then  ifStatementBlock  else   elseStatementBlock" ></div>
+    <ng-template #ifStatementBlock>
+<p> If statement block executed.</p>
+    </ng-template>
+    <ng-template #elseStatementBlock>
+<p>Else statement block executed. </p>
+    </ng-template>
+    <p>END Here -----------</p>
+
+    <div> For loop Example start here ----</div>
+
+<div *ngFor= "let color of colors index  as i "> 
+
+    <h2> Index- {{i}} Value - {{color}} </h2>
+</div>
+
+    <diV>End for loop example here </diV>
+
+
+<div> | exmple in angular js</div><br/>
+
+{{message| uppercase }}
+<br/>
+{{message| lowercase }}
+<br/>
+{{message| titlecase }} <br/>
+{{ message| slice:3 }}<br/>
+{{ message| slice:3 :10 |uppercase}}{{ message| slice:10:50| lowercase }}<br/>
+{{ person|json}}<br/>
+
+
+{{ date }}<br/>
+
+{{ date| date:"short"}}<br/>
+{{ date| date:"shortDate"}} <br/>
+{{ date| date:"shortTime"}} <br/>
+
+
+    </body>
+</html>
