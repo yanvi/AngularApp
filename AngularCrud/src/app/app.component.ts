@@ -3,20 +3,21 @@ import { EmployeeServiceService } from './employee-service.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './Second-Page.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   
    employees =[] ;
    departments =[] ;
+   errorMsg='';
   title = 'welcome to angular js application';
   public name="";
   isDisplay =true ;
   constructor(private empService:EmployeeServiceService){}
   ngOnInit()
   {
-this.employees = this.empService.getEmployees();
+this.empService.getEmployees().subscribe(data=> this.employees=data, errorMsg=> this.errorMsg=errorMsg);
 this.departments =this.empService.getDepartments();
   }
   
